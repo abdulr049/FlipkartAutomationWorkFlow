@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-06-16T18:53:08 IST" name="Default suite" finished-at="2026-06-16T18:53:21 IST" duration-ms="12767">
+    <groups>
+    </groups>
+    <test started-at="2026-06-16T18:53:08 IST" name="Default test" finished-at="2026-06-16T18:53:21 IST" duration-ms="12767">
+      <class name="automationWorkFlows.UserRegistrationTest$UserRegistrationWithExistingEmailTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:automationWorkFlows.UserRegistrationTest$UserRegistrationWithExistingEmailTest@bccb269]" started-at="2026-06-16T18:53:08 IST" name="setup" finished-at="2026-06-16T18:53:17 IST" duration-ms="8485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="userRegistrationForm(java.util.HashMap)[pri:0, instance:automationWorkFlows.UserRegistrationTest$UserRegistrationWithExistingEmailTest@bccb269]" started-at="2026-06-16T18:53:17 IST" name="userRegistrationForm" data-provider="userData" finished-at="2026-06-16T18:53:21 IST" duration-ms="4001" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{newsletter=true, lastName=Rahaman, country=India, zipCode=282001, year=1992, address2=Jagner Road Agra, city=Agra, specialOffers=true, address1=Radhe Wali Gali, Gali No. 17, mobileNumber=8882762490, firstName=Abdul, password=Abdul@123, month=November, name=Abdul, company=Ascent Business, state=Uttar Pradesh, day=11, email=abdul1781616188783@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userRegistrationForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:automationWorkFlows.UserRegistrationTest$UserRegistrationWithExistingEmailTest@bccb269]" started-at="2026-06-16T18:53:21 IST" name="tearDown" finished-at="2026-06-16T18:53:21 IST" duration-ms="221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- automationWorkFlows.UserRegistrationTest$UserRegistrationWithExistingEmailTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
