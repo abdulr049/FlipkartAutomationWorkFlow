@@ -13,50 +13,51 @@ import utilities.ExtendReport;
 
 public class Listeners implements ITestListener {
 
-    ExtentReports extentReport = ExtendReport.getReportObject();
+	ExtentReports extentReport = ExtendReport.getReportObject();
 
-    // ⭐ Thread-safe test object
-    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
+	// ⭐ Thread-safe test object
+	private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
-    @Override
-    public void onTestStart(ITestResult result) {
+	@Override
+	public void onTestStart(ITestResult result) {
 
-        ExtentTest test = extentReport.createTest(result.getMethod().getMethodName());
-        extentTest.set(test);
-    }
+		ExtentTest test = extentReport.createTest(result.getMethod().getMethodName());
+		extentTest.set(test);
+	}
 
-    @Override
-    public void onTestSuccess(ITestResult result) {
+	@Override
+	public void onTestSuccess(ITestResult result) {
 
-        extentTest.get().pass("Test Passed");
-    }
+		extentTest.get().pass("Test Passed");
+	}
 
-    @Override
-    public void onTestFailure(ITestResult result) {
+	@Override
+	public void onTestFailure(ITestResult result) {
 
-        extentTest.get().fail(result.getThrowable());
+		extentTest.get().fail(result.getThrowable());
 
-        try {
-          //  BaseTest baseTest = (BaseTest) result.getInstance();
-        	BaseTest baseTest = new BaseTest();
-            String path = baseTest.getScreenshot(result.getMethod().getMethodName());
-            
-            extentTest.get().addScreenCaptureFromPath(path);
+		try {
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+			BaseTest baseTest = (BaseTest) result.getInstance();
 
-    @Override
-    public void onTestSkipped(ITestResult result) {
+			String path = baseTest.getScreenshot(BaseTest.driver, result.getMethod().getMethodName());
 
-        extentTest.get().skip("Test Skipped");
-    }
+			extentTest.get().addScreenCaptureFromPath(path);
 
-    @Override
-    public void onFinish(ITestContext context) {
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
-        extentReport.flush(); // ⭐ VERY IMPORTANT
-    }
+	@Override
+	public void onTestSkipped(ITestResult result) {
+
+		extentTest.get().skip("Test Skipped");
+	}
+
+	@Override
+	public void onFinish(ITestContext context) {
+
+		extentReport.flush(); // ⭐ VERY IMPORTANT
+	}
 }

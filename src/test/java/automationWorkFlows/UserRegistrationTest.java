@@ -1,7 +1,5 @@
 package automationWorkFlows;
 
-import static org.testng.Assert.assertEquals;
-
 import java.util.HashMap;
 
 import org.testng.Assert;

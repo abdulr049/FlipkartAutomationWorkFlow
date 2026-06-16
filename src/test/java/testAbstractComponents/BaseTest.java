@@ -47,7 +47,7 @@ public class BaseTest {
 	}
 
 	
-	public String getScreenshot(String testName) throws IOException {
+	public String getScreenshot(WebDriver driver,String testName) throws IOException {
 
 	    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");
 	    String date = formatter.format(new Date());
